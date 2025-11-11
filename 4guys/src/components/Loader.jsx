@@ -212,7 +212,7 @@ const StyledWrapper = styled.div`
       transform: translateX(-50%) rotate(-5deg) scale(1);
     }
     
-    /* Phase 2: Di chuyển sang vị trí cuối (60-80%) */
+
     60% {
       left: 50%;
       transform: translateX(-50%) rotate(0deg) scale(1);
@@ -224,7 +224,7 @@ const StyledWrapper = styled.div`
       opacity: 1;
     }
     
-    /* Phase 3: Dựng lại vị trí cuối (80-100%) */
+  
     100% {
       left: calc(50% + var(--final-position));
       transform: translateX(-50%) rotate(0deg) scale(1);
