@@ -6,7 +6,7 @@ const TASK_ROLES = [
   { id: 'data', label: 'Data/QA Analyst' },
 ];
 
-function Homepage({ onStartInternship }) { 
+function Homepage() { 
     const [name, setName] = useState('');
     const [selectedRole, setSelectedRole] = useState(TASK_ROLES[0].id);
 
@@ -15,8 +15,7 @@ function Homepage({ onStartInternship }) {
             alert('Vui lòng nhập tên của bạn!');
             return;
         }
-        // Dùng onStartInternship để chuyển sang Dashboard chính thức
-        // if (onStartInternship) onStartInternship({ name, role: selectedRole }); 
+
         alert(`Bắt đầu thực tập: ${name} (${selectedRole}).`);
     };
 

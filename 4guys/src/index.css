@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
@@ -67,6 +65,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%);
 }
 
 h1 {
