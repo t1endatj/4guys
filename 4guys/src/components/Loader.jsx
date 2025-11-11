@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Loader = () => {
+const Loader = ({onComplete}) => {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
@@ -17,6 +17,12 @@ const Loader = () => {
     if (animationComplete) {
       setShowButton(true);
     }
+  };
+
+    const handleStartClick = () => {
+      if (onComplete) {
+        onComplete(); 
+      }
   };
 
   return (
@@ -38,7 +44,7 @@ const Loader = () => {
         
         {showButton && (
           <div className="button-container">
-            <button className="btn">
+            <button className="btn" onClick={handleStartClick}>
               Bắt đầu
             </button>
           </div>
