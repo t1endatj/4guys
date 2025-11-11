@@ -8,11 +8,17 @@ const TASK_ROLES = [
 
 function Homepage() { 
     const [name, setName] = useState('');
-    const [selectedRole, setSelectedRole] = useState(TASK_ROLES[0].id);
+    // SỬA LỖI: Khởi tạo state selectedRole là chuỗi rỗng ('') thay vì TASK_ROLES[0].id
+    const [selectedRole, setSelectedRole] = useState(''); 
 
     const handleStart = () => {
         if (name.trim() === '') {
             alert('Vui lòng nhập tên của bạn!');
+            return;
+        }
+        // THÊM KIỂM TRA: Nếu chưa chọn vị trí thì thông báo
+        if (selectedRole === '') { 
+            alert('Vui lòng chọn vị trí thực tập!');
             return;
         }
 
@@ -21,10 +27,13 @@ function Homepage() {
 
     return (
         <div 
-            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8"
+            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8 overflow-hidden" // Thêm overflow-hidden cho full screen
             style={{
+                // Loại bỏ backgroundAttachment: "fixed" và thêm margin/padding reset cho full screen
                 background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
-                backgroundAttachment: "fixed", 
+                minHeight: '100vh',
+                margin: 0,
+                padding: 0,
             }}
         >
             {/* CARD */}
@@ -40,7 +49,7 @@ function Homepage() {
                 {/* Content Area */}
                 <div className="space-y-6">
                     <p className="text-center text-gray-300 text-lg">
-                        Mentor AI đã sẵn sàng. Hãy chọn vai trò của bạn để bắt đầu chương trình.
+                        AINTERN đã sẵn sàng. Hãy chọn vai trò của bạn để bắt đầu chương trình mô phỏng thực tập.
                     </p>
 
                     {/* 1. Nhập Tên (Input) */}
@@ -54,7 +63,7 @@ function Homepage() {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300 outline-none placeholder-gray-400"
-                            placeholder="Nguyen Van A"
+                            placeholder="Ví dụ: Nguyễn Văn A"
                         />
                     </div>
 
@@ -68,14 +77,26 @@ function Homepage() {
                                 id="role-select"
                                 value={selectedRole}
                                 onChange={(e) => setSelectedRole(e.target.value)}
-                                className="w-full appearance-none p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500 transition duration-300 outline-none pr-10 cursor-pointer"
+                                className={`
+                                    w-full appearance-none p-3 rounded-lg border focus:ring-blue-500 focus:border-blue-500 transition duration-300 outline-none pr-10 cursor-pointer
+                                    ${selectedRole === '' 
+                                        ? 'bg-gray-700/70 border-gray-600 text-gray-400' 
+                                        : 'bg-gray-700 border-gray-600 text-white' 
+                                    }
+                                `}
                             >
+                                {/* Option để trống (Placeholder) */}
+                                <option value="" disabled>
+                                    -- Chọn vị trí --
+                                </option>
+                                {/* Các Role còn lại */}
                                 {TASK_ROLES.map((role) => (
-                                    <option key={role.id} value={role.id}>
+                                    <option key={role.id} value={role.id} className="text-white">
                                         {role.label}
                                     </option>
                                 ))}
                             </select>
+                            {/* Icon mũi tên tùy chỉnh */}
                             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
                                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
@@ -86,8 +107,8 @@ function Homepage() {
 
                     <button 
                         onClick={handleStart} 
-                        className="w-full py-4 bg-green-900 hover:bg-green-700 text-lg font-bold text-white rounded-lg transition duration-300 transform hover:scale-[1.02] disabled:opacity-50 mt-6"
-                        disabled={name.trim() === ''}
+                        className="w-full py-4 bg-green-900 hover:bg-green-700 text-lg font-bold text-black rounded-lg transition duration-300 transform hover:scale-[1.02] disabled:opacity-50 mt-6"
+                        disabled={name.trim() === '' || selectedRole === ''}
                     >
                         Bắt đầu Kỳ thực tập
                     </button>
