@@ -8,16 +8,11 @@ const Loader = ({onComplete}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 6000);
+      setShowButton(true);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
-
-  const handleTextClick = () => {
-    if (animationComplete) {
-      setShowButton(true);
-    }
-  };
 
     const handleStartClick = () => {
       if (onComplete) {
@@ -30,7 +25,6 @@ const Loader = ({onComplete}) => {
       <StyledWrapper className={showButton ? 'button-shown' : ''}>
         <div 
           id="load" 
-          onClick={handleTextClick}
           className={animationComplete ? 'clickable' : ''}
         >
           <div>A</div>
