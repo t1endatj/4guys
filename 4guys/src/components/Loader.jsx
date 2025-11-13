@@ -9,7 +9,7 @@ const Loader = ({onComplete}) => {
     const timer = setTimeout(() => {
       setAnimationComplete(true);
       setShowButton(true);
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);

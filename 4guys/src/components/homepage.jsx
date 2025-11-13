@@ -6,9 +6,8 @@ const TASK_ROLES = [
   { id: 'data', label: 'Data/QA Analyst' },
 ];
 
-function Homepage() { 
+function Homepage({onStart}) { 
     const [name, setName] = useState('');
-    // SỬA LỖI: Khởi tạo state selectedRole là chuỗi rỗng ('') thay vì TASK_ROLES[0].id
     const [selectedRole, setSelectedRole] = useState(''); 
 
     const handleStart = () => {
@@ -22,14 +21,14 @@ function Homepage() {
             return;
         }
 
-        alert(`Bắt đầu thực tập: ${name} (${selectedRole}).`);
+        onStart(name, selectedRole);
     };
 
     return (
         <div 
-            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8 overflow-hidden" // Thêm overflow-hidden cho full screen
+            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8 overflow-hidden" 
             style={{
-                // Loại bỏ backgroundAttachment: "fixed" và thêm margin/padding reset cho full screen
+                
                 background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
                 minHeight: '100vh',
                 margin: 0,
@@ -41,7 +40,7 @@ function Homepage() {
                 
                 {/* Header (Title) */}
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-400">
+                    <h1 className="text-4xl sm:text-5xl font-extrabold text-[#35C4F0]">
                         Chào mừng Intern!
                     </h1>
                 </div>
@@ -107,11 +106,12 @@ function Homepage() {
 
                     <button 
                         onClick={handleStart} 
-                        className="w-full py-4 bg-green-900 hover:bg-green-700 text-lg font-bold text-black rounded-lg transition duration-300 transform hover:scale-[1.02] disabled:opacity-50 mt-6"
+                        className="relative inline-block p-px font-semibold leading-6 text- bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95  disabled:opacity-50 mt-6"
                         disabled={name.trim() === '' || selectedRole === ''}
                     >
                         Bắt đầu Kỳ thực tập
                     </button>
+
                 </div>
             </div>
         </div>
