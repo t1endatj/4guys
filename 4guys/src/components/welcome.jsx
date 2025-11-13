@@ -114,7 +114,7 @@ function Welcome({ internData, onProjectSubmit }) {
                                     name="selectedProject" 
                                     checked={selectedProjectId === project.id}
                                     onChange={() => setSelectedProjectId(project.id)}
-                                    className="form-radio h-5 w-5 text-blue-500 bg-gray-700 border-gray-600 "
+                                    className=" hidden "
                                 />
                             </div>
                             <div className="mt-3 flex flex-wrap gap-2">
