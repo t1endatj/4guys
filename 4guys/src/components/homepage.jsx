@@ -40,7 +40,7 @@ function Homepage({onStart}) {
                 
                 {/* Header (Title) */}
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-400">
+                    <h1 className="text-4xl sm:text-5xl font-extrabold text-[#35C4F0]">
                         Chào mừng Intern!
                     </h1>
                 </div>

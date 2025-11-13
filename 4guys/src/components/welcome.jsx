@@ -47,7 +47,7 @@ function Welcome({ internData, onProjectSubmit }) {
     // Nội dung của Slide 1
     const Slide1 = (
         <div className="text-center space-y-6 animate-fadeIn">
-            <h2 className="text-5xl font-extrabold text-blue-400">
+            <h2 className="text-5xl font-extrabold text-[#35C4F0]">
                 Chào mừng, {internData.name}!
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -114,12 +114,12 @@ function Welcome({ internData, onProjectSubmit }) {
                                     name="selectedProject" 
                                     checked={selectedProjectId === project.id}
                                     onChange={() => setSelectedProjectId(project.id)}
-                                    className="form-radio h-5 w-5 text-blue-500 bg-gray-700 border-gray-600 focus:ring-blue-500"
+                                    className="form-radio h-5 w-5 text-blue-500 bg-gray-700 border-gray-600 "
                                 />
                             </div>
                             <div className="mt-3 flex flex-wrap gap-2">
                                 {project.technologies.map((tech, index) => (
-                                    <span key={index} className="text-xs bg-purple-900 text-purple-300 px-2 py-1 rounded-full font-medium">
+                                    <span key={index} className="text-xs bg-blue-900 text-blue-400 px-2 py-1 rounded-full font-medium">
                                         {tech}
                                     </span>
                                 ))}
