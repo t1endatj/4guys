@@ -106,11 +106,12 @@ function Homepage({onStart}) {
 
                     <button 
                         onClick={handleStart} 
-                        className="w-full py-4 bg-green-900 hover:bg-green-700 text-lg font-bold text-black rounded-lg transition duration-300 transform hover:scale-[1.02] disabled:opacity-50 mt-6"
+                        className="relative inline-block p-px font-semibold leading-6 text- bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95  disabled:opacity-50 mt-6"
                         disabled={name.trim() === '' || selectedRole === ''}
                     >
                         Bắt đầu Kỳ thực tập
                     </button>
+
                 </div>
             </div>
         </div>

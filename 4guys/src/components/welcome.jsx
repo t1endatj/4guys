@@ -29,10 +29,6 @@ function Welcome({ internData, onProjectSubmit }) {
         setStep(2);
     };
 
-    const handleBack = () => {
-        setStep(1);
-    };
-
     const handleSubmit = () => {
         if (!selectedProjectId) {
             alert('Vui lòng chọn một dự án để bắt đầu!');
@@ -74,7 +70,7 @@ function Welcome({ internData, onProjectSubmit }) {
             <div className="flex justify-end">
                 <button 
                     onClick={handleNext} 
-                    className="py-3 px-6 bg-blue-600 hover:bg-blue-700 text-black font-bold rounded-lg transition duration-300 flex items-center"
+                    className="relative inline-block p-px font-semibold leading-6 text- bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95  disabled:opacity-50 mt-6"
                 >
                     Next <i className="ml-2 fas fa-arrow-right"></i>
                 </button>
@@ -139,7 +135,7 @@ function Welcome({ internData, onProjectSubmit }) {
                 <button 
                     onClick={handleSubmit} 
                     disabled={!selectedProjectId} // Chỉ kích hoạt khi đã chọn
-                    className="py-9 px-8 bg-green-600 hover:bg-green-700 text-black font-bold rounded-lg transition duration-300 disabled:opacity-50 "
+                    className="relative inline-block p-px font-semibold leading-6 text- bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95  disabled:opacity-50 mt-6"
                 >
                     Submit
                 </button>
