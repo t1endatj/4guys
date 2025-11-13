@@ -34,11 +34,14 @@ function Welcome({ internData, onProjectSubmit }) {
             alert('Vui lòng chọn một dự án để bắt đầu!');
             return;
         }
-        // Tìm tên dự án đã chọn
-        const projectName = PROJECT_OPTIONS.find(p => p.id === selectedProjectId)?.name || selectedProjectId;
+
+        // Tìm đối tượng dự án đã chọn
+        const selectedProject = PROJECT_OPTIONS.find(p => p.id === selectedProjectId);
         
-        // Gọi callback để chuyển sang trang Dashboard
-        onProjectSubmit(projectName); 
+        // Gọi callback và truyền cả danh sách dự án + dự án đã chọn
+        if (typeof onProjectSubmit === 'function') {
+            onProjectSubmit({ selectedProject, allProjects: PROJECT_OPTIONS });
+        }
     };
 
     // Lọc dự án 
