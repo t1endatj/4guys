@@ -42,7 +42,7 @@ export default function Dashboard({ project, internData }) {
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-50">
-      {/* Sidebar */}
+  
       <aside className="w-64 bg-gray-900 text-white flex flex-col">
         <div className="p-6 border-b border-gray-700">
           <h2 className="text-xl font-bold text-blue-400">My Project</h2>
@@ -94,7 +94,7 @@ export default function Dashboard({ project, internData }) {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden">
+      <main className="flex-1 w-400 flex flex-col overflow-hidden">
         {/* Header */}
         <header className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between shrink-0">
           <div>
@@ -120,10 +120,10 @@ export default function Dashboard({ project, internData }) {
         </header>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-hidden p-4">
+        <div className="flex-1 overflow-hidden">
           {activeMenu === 'dashboard' && (
-            <div className="h-full flex flex-col space-y-3">
-              {/* Stats Cards */}
+            <div className="h-full flex flex-col gap-3 p-3 ">
+            
               <div className="grid grid-cols-4 gap-4 shrink-0">
                 <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
                   <p className="text-sm text-gray-500">Tổng Task</p>
@@ -149,7 +149,6 @@ export default function Dashboard({ project, internData }) {
                 </div>
               </div>
 
-              {/* Task Table */}
               <div className="bg-white rounded-lg border border-gray-200 shadow-sm flex-1 flex flex-col min-h-0">
                 <div className="p-4 border-b border-gray-200 bg-gray-50 shrink-0">
                   <h2 className="text-lg font-semibold text-gray-900">Danh sách Task</h2>
@@ -173,8 +172,8 @@ export default function Dashboard({ project, internData }) {
                           <td className="px-6 py-4 text-sm">{getPriorityBadge(task.priority)}</td>
                           <td className="px-6 py-4 text-sm">{getStatusBadge(task.status)}</td>
                           <td className="px-6 py-4 text-sm">
-                            <button className="text-blue-600 hover:text-blue-800 font-medium mr-3 hover:underline">Chi tiết</button>
-                            <button className="text-gray-600 hover:text-gray-800 font-medium hover:underline">Sửa</button>
+                            <button className="text-white font-medium mr-3 ">Chi tiết</button>
+                            <button className="text-white font-medium ">Sửa</button>
                           </td>
                         </tr>
                       ))}
@@ -186,23 +185,27 @@ export default function Dashboard({ project, internData }) {
           )}
 
           {activeMenu === 'task' && (
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm h-full flex flex-col">
-              <div className="p-6 border-b border-gray-200 shrink-0">
-                <h2 className="text-xl font-semibold text-gray-900">Quản lý Task</h2>
-              </div>
-              <div className="flex-1 overflow-auto p-6">
-                <p className="text-gray-500">Khu vực quản lý task chi tiết đang được phát triển...</p>
+            <div className="h-full flex flex-col gap-3 p-3">
+              <div className="bg-white rounded-lg border border-gray-200 shadow-sm flex-1 flex flex-col min-h-0">
+                <div className="p-4 border-b border-gray-200 bg-gray-50 shrink-0">
+                  <h2 className="text-lg font-semibold text-gray-900">Quản lý Task</h2>
+                </div>
+                <div className="flex-1 overflow-auto p-6">
+                  <p className="text-gray-500">Khu vực quản lý task chi tiết đang được phát triển...</p>
+                </div>
               </div>
             </div>
           )}
 
           {activeMenu === 'mentor' && (
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm h-full flex flex-col">
-              <div className="p-6 border-b border-gray-200 shrink-0">
-                <h2 className="text-xl font-semibold text-gray-900">Mentor AI</h2>
-              </div>
-              <div className="flex-1 overflow-auto p-6">
-                <p className="text-gray-500">Tính năng hỗ trợ AI Mentor đang được phát triển...</p>
+            <div className="h-full flex flex-col gap-3 p-3">
+              <div className="bg-white rounded-lg border border-gray-200 shadow-sm flex-1 flex flex-col min-h-0">
+                <div className="p-4 border-b border-gray-200 bg-gray-50 shrink-0">
+                  <h2 className="text-lg font-semibold text-gray-900">Mentor AI</h2>
+                </div>
+                <div className="flex-1 overflow-auto p-6">
+                  <p className="text-gray-500">Tính năng hỗ trợ AI Mentor đang được phát triển...</p>
+                </div>
               </div>
             </div>
           )}
