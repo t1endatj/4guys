@@ -6,9 +6,8 @@ const TASK_ROLES = [
   { id: 'data', label: 'Data/QA Analyst' },
 ];
 
-function Homepage() { 
+function Homepage({onStart}) { 
     const [name, setName] = useState('');
-    // SỬA LỖI: Khởi tạo state selectedRole là chuỗi rỗng ('') thay vì TASK_ROLES[0].id
     const [selectedRole, setSelectedRole] = useState(''); 
 
     const handleStart = () => {
@@ -22,14 +21,14 @@ function Homepage() {
             return;
         }
 
-        alert(`Bắt đầu thực tập: ${name} (${selectedRole}).`);
+        onStart(name, selectedRole);
     };
 
     return (
         <div 
-            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8 overflow-hidden" // Thêm overflow-hidden cho full screen
+            className="min-h-screen w-full relative flex items-center justify-center p-4 sm:p-8 overflow-hidden" 
             style={{
-                // Loại bỏ backgroundAttachment: "fixed" và thêm margin/padding reset cho full screen
+                
                 background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
                 minHeight: '100vh',
                 margin: 0,
