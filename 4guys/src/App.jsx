@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Loader from './components/Loader';
-import Homepage from './components/homepage';
+import Homepage from './components/input';
 import './App.css';
 import Welcome from './components/welcome';
 import Info from './components/Info';

@@ -114,7 +114,7 @@ export default function Dashboard({ project, internData }) {
               <p className="text-lg font-bold text-blue-600">24h 12/11/2025</p>
             </div>
             <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
-              <span className="text-xl">👤</span>
+              <span className="text-xl" onClick={ReturnHome}>👤</span>
             </button>
           </div>
         </header>
