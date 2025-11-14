@@ -3,21 +3,21 @@ import React, { useState } from 'react';
 const PROJECT_OPTIONS = [
     { 
         id: 'alpha', 
-        name: 'Project Alpha (E-commerce UI)', 
-        description: 'Xây dựng giao diện trang chủ, chi tiết sản phẩm và giỏ hàng theo Design System. Tập trung vào tính tương tác và khả năng responsive.', 
-        technologies: ['React', 'Tailwind CSS', 'API Mocking'] 
+        name: 'Contact form ', 
+        description: 'Xây dựng một form liên hệ cơ bản, tập trung vào thiết kế sạch sẽ và khả năng sử dụng (Usability).', 
+        technologies: ['HTML', 'CSS', 'Google Fonts (Poppins)'] 
     },
     { 
         id: 'beta', 
-        name: 'Project Beta (Task Management App)', 
-        description: 'Tạo các components như Task Card, Form nhập liệu, và bộ lọc trạng thái cho ứng dụng quản lý công việc.', 
-        technologies: ['Vue.js', 'SCSS', 'State Management (Pinia/Redux)'] 
+        name: 'Project Landing Page', 
+        description: 'Phát triển một trang đích giới thiệu sản phẩm/dịch vụ hoàn chỉnh, tuân thủ chặt chẽ Responsive Design.', 
+        technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap Icons']
     },
     { 
         id: 'gamma', 
-        name: 'Project Gamma (Internal Component Library)', 
-        description: 'Đóng gói các UI components cơ bản (Button, Input, Modal) và viết documentation bằng Storybook.', 
-        technologies: ['Storybook', 'Styled Components', 'TypeScript'] 
+        name: 'Pricing Component', 
+        description: 'Xây dựng Pricing Component chuyên nghiệp có chức năng toggle chuyển giữa gói tháng và gói năm.', 
+        technologies: ['HTML', 'CSS', 'JavaScript (Vanilla JS)']
     },
 ];
 
